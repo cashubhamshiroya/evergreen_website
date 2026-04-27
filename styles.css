@@ -502,6 +502,10 @@ h3 {
   color: var(--muted);
 }
 
+.site-footer p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .icon-box,
 .value-icon {
   display: grid;
