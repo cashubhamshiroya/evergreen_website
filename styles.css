@@ -791,9 +791,9 @@ h3 {
   }
 
   .hero {
-    min-height: 680px;
+    min-height: 610px;
     padding-top: 126px;
-    padding-bottom: 66px;
+    padding-bottom: 54px;
   }
 
   .hero-bg::before {
@@ -832,6 +832,10 @@ h3 {
     flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 0;
+  }
+
+  .scroll-cue {
+    bottom: 34px;
   }
 
   .hero-actions .button {
