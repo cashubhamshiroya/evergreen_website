@@ -231,7 +231,7 @@ a {
   position: relative;
   min-height: 760px;
   overflow: hidden;
-  padding: 178px 0 96px;
+  padding: 204px 0 96px;
   isolation: isolate;
 }
 
@@ -248,7 +248,7 @@ a {
   content: "";
   background-image: url("assets/earth-from-moon.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center clamp(72px, 11vh, 122px);
   background-size: cover;
 }
 
@@ -737,11 +737,11 @@ h3 {
 
   .hero {
     min-height: 680px;
-    padding-top: 146px;
+    padding-top: 168px;
   }
 
   .hero-bg::before {
-    background-position: center top;
+    background-position: center 74px;
   }
 
   .hero-bg::after {
