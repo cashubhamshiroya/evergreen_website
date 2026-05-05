@@ -224,41 +224,44 @@ a {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 78% 8%, rgba(126, 199, 148, 0.18), transparent 24%),
-    radial-gradient(circle at 18% 34%, rgba(69, 128, 87, 0.3), transparent 28%),
-    linear-gradient(180deg, #080c0b 0%, #020807 76%, #0c180f 100%);
+    linear-gradient(180deg, #050708 0%, #050708 100%);
 }
 
 .hero-bg::before {
   position: absolute;
   inset: 0;
   content: "";
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.3px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 1px, transparent 1.3px);
-  background-position: 0 0, 38px 64px;
-  background-size: 160px 160px, 220px 220px;
-  opacity: 0.28;
+  background-image: url("assets/earth-from-moon.jpg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
 }
 
 .hero-bg::after {
   position: absolute;
-  right: -10%;
-  bottom: -18%;
-  width: 72vw;
-  height: 220px;
+  inset: 0;
   content: "";
-  border-radius: 50% 50% 0 0;
-  background: linear-gradient(180deg, #d3d6ce, #8f988a 62%, #60695c);
-  box-shadow: inset 0 18px 30px rgba(255, 255, 255, 0.28);
-  opacity: 0.72;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 6, 8, 0.92) 0%,
+      rgba(3, 6, 8, 0.78) 28%,
+      rgba(3, 6, 8, 0.45) 52%,
+      rgba(3, 6, 8, 0.15) 72%,
+      rgba(3, 6, 8, 0) 92%
+    ),
+    linear-gradient(180deg, rgba(3, 6, 8, 0.35) 0%, rgba(3, 6, 8, 0) 30%, rgba(3, 6, 8, 0) 70%, rgba(3, 6, 8, 0.4) 100%);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 52px;
   align-items: center;
+}
+
+.hero-copy {
+  max-width: 620px;
 }
 
 .eyebrow {
@@ -359,46 +362,6 @@ h3 {
   content: "";
   border-radius: 50%;
   background: var(--mint);
-}
-
-.hero-orb {
-  display: grid;
-  min-height: 450px;
-  place-items: center;
-}
-
-.planet {
-  position: relative;
-  width: min(420px, 78vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 37% 31%, rgba(255, 255, 255, 0.45), transparent 0 12%, transparent 18%),
-    radial-gradient(circle at 34% 45%, rgba(116, 169, 99, 0.92), transparent 0 12%, transparent 22%),
-    radial-gradient(circle at 58% 58%, rgba(51, 102, 82, 0.8), transparent 0 15%, transparent 30%),
-    radial-gradient(circle at 50% 50%, #4d7aa0 0 36%, #1f415c 58%, #07131c 74%);
-  box-shadow:
-    inset -52px -48px 80px rgba(0, 0, 0, 0.72),
-    inset 22px 18px 42px rgba(255, 255, 255, 0.2),
-    0 0 80px rgba(112, 180, 145, 0.18);
-  opacity: 0.82;
-}
-
-.planet::before {
-  position: absolute;
-  inset: -16%;
-  content: "";
-  border-radius: inherit;
-  background: radial-gradient(circle at 31% 28%, rgba(196, 230, 206, 0.28), transparent 0 38%, transparent 60%);
-  filter: blur(10px);
-}
-
-.planet span {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.12) 42%, transparent 56%);
-  mix-blend-mode: screen;
 }
 
 .scroll-cue {
@@ -798,18 +761,29 @@ h3 {
   }
 
   .hero {
+    min-height: 640px;
     padding-top: 146px;
   }
 
-  .hero-grid,
+  .hero-bg::before {
+    background-position: 70% center;
+  }
+
+  .hero-bg::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 6, 8, 0.85) 0%,
+        rgba(3, 6, 8, 0.55) 35%,
+        rgba(3, 6, 8, 0.55) 65%,
+        rgba(3, 6, 8, 0.9) 100%
+      );
+  }
+
   .two-column,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-
-  .hero-orb {
-    min-height: 320px;
   }
 
   .service-grid,
@@ -842,7 +816,7 @@ h3 {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 580px;
     padding-top: 126px;
     padding-bottom: 66px;
   }
@@ -869,21 +843,6 @@ h3 {
   .button {
     width: auto;
     min-width: 152px;
-  }
-
-  .hero-bg::after {
-    right: -35%;
-    width: 125vw;
-    height: 140px;
-  }
-
-  .hero-orb {
-    min-height: 240px;
-    margin-top: -14px;
-  }
-
-  .planet {
-    width: min(300px, 78vw);
   }
 
   .service-grid,
